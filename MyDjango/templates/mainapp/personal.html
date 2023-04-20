@@ -1,0 +1,27 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/bacfon.css' %}">
+
+{% block title %}
+    <h1 align="center" style="color: white"> Наши сотрудники: </h1>
+{% endblock %}
+
+{% block content %}
+    <style>
+        .round {
+            border-radius: 100px; /* Радиус скругления */
+            border: 3px solid silver; /* Параметры рамки */
+            box-shadow: 0 0 7px #666; /* Параметры тени */
+        }
+    </style>
+    <div><a href="/manager"><span
+            style="color:aliceblue"><h1>Топ менеджеры</h1>  <img
+            src="static/img/personal/boss.jpg" class="round"
+            width="500" height="500"></span></a></div>
+    <div><a href="/manshop"><span style="color:aliceblue;"><h1>Менеджеры по продажам </h1>
+        <img src="static/img/personal/men.jpg" class="round"
+            width="500" height="600"></span></a></div>
+
+
+{#    <a href={% url 'journal' %}><h2 style="color: white">Журнал посещений</h2></a>#}
+{% endblock %}

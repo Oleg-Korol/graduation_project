@@ -1,0 +1,50 @@
+ {% load static %}
+<html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Welcome my educational project</title>
+                <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+                <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+                <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+            <div class="page-header">
+            <h1><a href="/">CAR DEALERSHIP</a></h1>
+            </div>
+
+        </head>
+        <body>
+
+
+{#            <div class="container">#}
+{##}
+{#                {% block header %}#}
+{##}
+{#                <div class="row" id="head">#}
+{##}
+{#                    <div class="col -xs-8"#}
+{#                    <h1>Сервис учета автомобилей</h1>#}
+{##}
+{#            <div>#}
+{##}
+{#            <div class="col-xs-4" id="car-selector">#}
+{#                <strong>Салоны:</strong>#}
+{#                <select>#}
+{#                    <option value="">Все машины</option>#}
+{#                    {% for stock in STOCKS %}#}
+{#                        <option value = "{{ stock.id }}"{% if stock.selected %}selected = "1"{{ group.title }}{% if group.leader %}#}
+{#                    {endfor}#}
+{#                </select>#}
+{#            </div>#}
+{##}
+{#            <div>#}
+
+                <h2><a href="">{{ cars }}</a></h2>
+                <p> </p>
+            </div>
+
+            <div>
+                <h2><a href="">{{ cars }}</a></h2>
+                <p></p>
+            </div>
+        </body>
+    </html>

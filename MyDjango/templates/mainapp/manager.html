@@ -1,0 +1,28 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/bacfon.css' %}">
+
+{% block title %}
+    <h1 align="center" style="color: aliceblue">{{ title }}</h1>
+{% endblock %}
+
+{% block content %}
+    <style>
+        .round {
+            border-radius: 200px; /* Радиус скругления */
+            border: 3px solid silver; /* Параметры рамки */
+            box-shadow: 0 0 7px #666; /* Параметры тени */
+        }
+    </style>
+    {% for el in manager %}
+        <img src="/media/ava/boss.jpg" width="300" class="round">
+        <div class="alert alert -warning mt-2">
+        <h3 style="color: aliceblue">{{ el.last_name }}
+                        {{ el.first_name }}
+                        {{ el.patronymic }}
+        </h3>
+        <h3 style="color: aliceblue">Номер телефона:{{ el.phone_number }}</h3>
+    {% endfor %}
+</div>
+
+{% endblock %}

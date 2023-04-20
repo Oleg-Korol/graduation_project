@@ -1,0 +1,33 @@
+{% load static %}
+
+
+<link rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+      href="{% static 'css/bacfon.css' %}">
+<link rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+{% block title %}
+    <h1 align="center" style="color:yellowgreen">{{ title }}</h1>
+{% endblock %}
+
+</head>
+<body>
+ {% for el in topic %}
+
+          <h3 style="color:darkviolet">  {{el.title|safe}}</h3>
+        {{el.content|safe}}
+
+ {% endfor %}
+<video src="/media/video/prezent2.mp4" controls width="1300"
+       height="800"></video>
+<video src="/media/video/prezent.mp4" controls width="1300"
+       height="800"></video>
+</body>
+</html>

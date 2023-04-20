@@ -1,0 +1,46 @@
+{% load static %}
+
+<link rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/bacfon.css' %}">
+<link rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+{% block title %}
+    <h1 align="center" style="color:yellow">{{ title }}</h1>
+{% endblock %}
+
+{% block content %}
+    {% for el in sales %}
+        {% if el.sale_name == "2020" %}
+            <h2 style="color:white">Скидки на автомобили 2020 г.в.
+                составляют {{ el.discount_amount }}%</h2>
+        {% elif el.sale_name == "2021" %}
+            <h2 style="color:white">Скидки на автомобили 2021 г.в.
+                составляют {{el.discount_amount }}%  </h2>
+        {% endif %}
+    {% endfor %}
+
+    {% for el in auto %}
+        <div class="alert alert -warning mt-2">
+        {% if el.year_of_release == 2020 or el.year_of_release == 2021 %}
+            <center>
+            <h3 style="color:black">  {{ el.last_name }}</h3>
+            <center>
+            <h3 style="color:darkviolet">Год
+                выпуска: {{ el.year_of_release }}</h3>
+            <img src="{{ el.photo.url }}" width="1000" height="600"
+                 align="top">
+            <h3 style="color:yellow">Старая цена: {{ el.price }}</h3>
+            <h3 style="color:red"> Новая цена: {{ el.sale_price }}</h3>
+
+
+        {% endif %}
+    {% endfor %}
+
+
+
+
+{% endblock %}
+
+

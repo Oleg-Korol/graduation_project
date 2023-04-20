@@ -1,0 +1,62 @@
+{% load static %}
+
+<link rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/bacfon.css' %}">
+<link rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+{% block title %}
+    <h1 align="center" style="color:yellowgreen">{{ title }}</h1>
+{% endblock %}
+
+{% block content %}
+    {% for el in mazda %}
+
+        <h3 style="color:darkviolet">  {{ el.last_name }}</h3>
+        <img src="{{ el.photo.url }}" width="1000" height="600" align="top">
+        <h4 style="color:white"> {{ el.notes }}</h4>
+        <table>
+            <colgroup>
+                <col span="14" style="background:Khaki">
+            </colgroup>
+
+            <tr>
+                <th>Модель</th>
+                <th>Класс автомобиля</th>
+                <th>Год выпуска</th>
+                <th>Тип кузова</th>
+                <th>Тип привода</th>
+                <th>Вид топлива</th>
+                <th>Рабочий обьем</th>
+                <th>Цвет авто</th>
+                <th>Колличество мест</th>
+                <th>Максимальная скорость,км/ч</th>
+                <th>Снаряженная масса,кг</th>
+                <th>Рейтинг безопасности автомобилей euroncap (кол-во звезд)
+                </th>
+                <th>Цена(y.e.)</th>
+
+            </tr>
+            <tr>
+                <td>{{ el.last_name }}</td>
+                <td>{{ el.car_class }}</td>
+                <td>{{ el.year_of_release }}</td>
+                <td>{{ el.type_body }}</td>
+                <td>{{ el.drive }}</td>
+                <td>{{ el.fuel }}</td>
+                <td>{{ el.volume_engine }}</td>
+                <td>{{ el.color }}</td>
+                <td>{{ el.number_of_seats }}</td>
+                <td>{{ el.maximum_speed }}</td>
+                <td>{{ el.curb_weight }}</td>
+                <td>{{ el.euroncap }}</td>
+                <td>{{ el.price }}</td>
+            </tr>
+        </table>
+
+    {% endfor %}
+
+{% endblock %}
+
+

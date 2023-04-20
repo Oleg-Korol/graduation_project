@@ -1,0 +1,46 @@
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+    <a href="?month={{ prev_month}}" title="Предыдущий месяц"></a>
+    <strong>{{ month_verbose }} {{ year }}</strong>
+    <a href="?month={{ next_month}}" title="Следующий месяц"></a>
+
+</p>
+
+
+{% for el in managers %}
+</table>
+     <table>
+            <colgroup>
+                <col span="35" style="background-color: khaki">
+            </colgroup>
+
+             <thead>
+               <tr>
+               <th>Сотрудник</th>
+                {% for day in month_header %}
+                <th class="header-day">
+                {{ day.verbose }}
+                <br/>{{ day.day }}
+                </th>
+                {% endfor %}
+                </tr>
+                </thead>
+
+
+
+  </tr>
+            <tr>
+                <td>{{ el.fullname }}</td>
+
+            </tr>
+        </table>
+{% endfor %}
+
+</body>
+</html>

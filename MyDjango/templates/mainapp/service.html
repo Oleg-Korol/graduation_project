@@ -1,0 +1,72 @@
+{% load static %}
+
+<link rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/bacfon.css' %}">
+<link rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+{% block title %}
+    <h1 align="center" style="color:aliceblue">{{ title }}</h1>
+{% endblock %}
+
+{% block content %}
+    {% for el in serv %}
+        <table>
+            <caption style="color: aliceblue"><b> Регламент выполняемых
+                работ {{ el.title }}</b></caption>
+            <colgroup>
+                <col span="18" style="background:cornsilk">
+            </colgroup>
+
+            <tr>
+                <th>Модель/Цена</th>
+                <th>ТО-0</th>
+                <th>Т0-1</th>
+                <th>Т0-2</th>
+                <th>Т0-3</th>
+                <th>Т0-4</th>
+                <th>Т0-5</th>
+                <th>Т0-6</th>
+            </tr>
+
+            <tr>
+                <td>{{ el.car_brand }}</td>
+                <td>{{ el.to_0 }}</td>
+                <td>{{ el.to_1 }}</td>
+                <td>{{ el.to_2 }}</td>
+                <td>{{ el.to_3 }}</td>
+                <td>{{ el.to_4 }}</td>
+                <td>{{ el.to_5 }}</td>
+                <td>{{ el.to_6 }}</td>
+            </tr>
+
+            <tr>
+                <td>Цена</td>
+                <td>{{ el.to_0_price }}</td>
+                <td>{{ el.to_1_price }}</td>
+                <td>{{ el.to_2_price }}</td>
+                <td>{{ el.to_3_price }}</td>
+                <td>{{ el.to_4_price }}</td>
+                <td>{{ el.to_5_price }}</td>
+                <td>{{ el.to_6_price }}</td>
+            </tr>
+        </table>
+
+    {% endfor %}
+
+    <a href={% url 'record_add' %}><h2 style="color:white ">ЗАПИСАТЬСЯ НА ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ</h2></a>
+
+    <div class="form-wrap">
+        <div class="profile"><img
+                src="https://sun9-42.userapi.com/impg/doB3h8wlinNIcYgRU-SsklHzVw5cPbJ4MI63TA/QO-6BqjznyA.jpg?size=1127x844&quality=95&sign=83e08a7d3b6575bc2cf4a7a0e8816ec5&c_uniq_tag=kNzSvW8ikLIENkhgxgFKYRjmpKAl8NLxkZ-idqmecAY&type=album"
+                width="1000" height="600">
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+
+
+{% endblock content %}

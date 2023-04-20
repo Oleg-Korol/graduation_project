@@ -1,0 +1,49 @@
+{% load static %}
+
+<link rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/bacfon.css' %}">
+<link rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+{% block title %}
+    <h1 align="center">{{ title }}</h1>
+{% endblock %}
+
+{% block content %}
+    {% for el in salon %}
+        <div class="alert alert -warning mt-2">
+        {% if el.name == 'АвтоМолл' %}
+            <div><a href="/avtomoll" style="color:darkviolet">
+                <h1>{{ el.name }}</h1></a></div>
+            <a href="/avtomoll"> <img src="/media/foto_salon/avtomoll2.jpg"
+                                      width="600" height="400"></a>.
+            <h3 style="color: snow">{{ el.sity }}</h3>
+            <h3 style="color: snow">{{ el.location }}</h3>
+            <h3 style="color: snow">Управляющий: {{ el.top_manager.first_name }}
+                {{ el.top_manager.last_name }} </h3>
+            <h3 style="color: snow">Менеджер по продажам:{{ el.manager_shop.first_name}}
+                {{ el.manager_shop.last_name }} </h3>
+            <h3 style="color: snow">{{ el.phone_number }}</h3>
+        {% endif %}
+        <br>
+        {% if el.name == 'Шоурум' %}
+            <div><a href="/shourum" style="color:darkviolet">
+                <h1>{{ el.name }}</h1></a></div>
+            <a href="/shourum"> <img src="/media/foto_salon/Shouroom.png"
+                                     width="600" height="400"></a>.
+            <h3 style="color: snow">{{ el.name }}</h3>
+            <h3 style="color: snow">{{ el.sity }}</h3>
+            <h3 style="color: snow">{{ el.location }}</h3>
+            <h3 style="color: snow">
+                Управляющий: {{ el.top_manager.first_name }}
+                {{ el.top_manager.last_name }} </h3>
+            <h3 style="color: snow"> Менеджер по продажам:{{ el.manager_shop.first_name}}
+                {{ el.manager_shop.last_name }} </h3>
+            <h3 style="color: snow">{{ el.phone_number }}</h3>
+        {% endif %}
+
+    {% endfor %}
+</div>
+
+{% endblock %}

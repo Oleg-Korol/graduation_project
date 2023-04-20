@@ -1,0 +1,55 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        {{ title }}
+    {% endblock %}
+    <link rel="stylesheet"
+          href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet"
+          href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <div class="page-header">
+        <h1><a href="/">CAR DEALERSHIP</a></h1>
+    </div>
+</head>
+<body>
+{% block body %}
+    <span class="message">{{ message }}</span>{{ content }}
+    <div>
+        <a href="/manufacture"><span
+                style="color:violet">  Автомобили</span></a>
+    </div>
+    <div>
+        <a href="/cars"><span style="color:violet"> Акции  </span></a>
+    </div>
+    <div>
+        <a href="/salon"><span style="color:violet;"> Наши салоны </span></a>
+    </div>
+    <div>
+        <a href="/personal"><span style="color:violet;"> Персонал   </span></a>
+    </div>
+    <div>
+        <a href="/service"><span
+                style="color:violet;"> Сервисное обслуживание </span></a>
+    </div>
+    <div>
+        <a href="/about"><span
+                style="color:violet;"> Поступления на склад </span></a>
+    </div>
+    <div>
+        <a href="/contact"><span
+                style="color:violet;"> Презентационные ролики </span></a>
+    </div>
+
+
+    <center>
+        <img src="static/img/qw1.png" width="1300" height="800">
+    </center>
+
+{% endblock %}
+</body>
+</html>

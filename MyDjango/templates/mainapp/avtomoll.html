@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+
+<link rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+      href="{% static 'css/bacfon.css' %}">
+<link rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+{% block title %}
+    <h1 align="center" style="color:yellowgreen">{{ title }}</h1>
+{% endblock %}
+
+{% block content %}
+    {% for el in avtomoll %}
+
+        <h3 style="color:darkviolet">  {{ el.last_name }}</h3>
+        <img src="{{ el.photo.url}}" width="1000" height="500">
+        <h4 style="color:white"> {{ el.notes }}</h4>
+
+    {% endfor %}
+
+{% endblock %}
+
+

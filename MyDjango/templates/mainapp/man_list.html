@@ -1,0 +1,108 @@
+{% load static %}
+
+<link rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/bacfon.css' %}">
+<link rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+{% block title %}
+    <h1 align="center" style="color:yellowgreen "><strong> {{ title }}</strong></h1>
+{% endblock %}
+
+{% block content %}
+    <span class="message">{{ message }}</span>{{ content }}
+
+
+    {% for el in man %}
+
+        {% if el.manufacture_name == 'Bmw' %}
+            <div><a href="/bmw" style="color:darkviolet">
+                <h1>{{ el.manufacture_name }}</h1></a></div>
+            <center>
+            <a href="/bmw"> <img src="{{ el.logo_manuf.url }}" width="1850"
+                                 height="700"></a>.
+            <h4 style="color:blanchedalmond"><strong>Страна
+                производства: {{ el.country_of_manufacture }}</strong></h4>
+            <h4 style="color:white"> История: {{ el.history }}</h4>
+        {% endif %}
+        <br>
+        {% if el.manufacture_name == 'Opel' %}
+            <div><a href="/opel" style="color:darkviolet">
+                <h1>{{ el.manufacture_name }}</h1></a></div>
+
+            <a align="center" href="/opel"> <img src="{{ el.logo_manuf.url }}"
+                                                 width="1000" height="500"></a>.
+
+
+            <h4 style="color:blanchedalmond"><strong>Страна
+                производства: {{ el.country_of_manufacture }}</strong></h4>
+            <h4 style="color:white"> История: {{ el.history }}</h4>
+        {% endif %}
+        <br>
+        {% if el.manufacture_name == 'Mazda' %}
+            <div><a href="/mazda" style="color:darkviolet">
+                <h1>{{ el.manufacture_name }}</h1></a></div>
+            <a href="/mazda"> <img src="{{ el.logo_manuf.url }}" width="1850"
+                                   height="700"></a>.
+            <h4 style="color:blanchedalmond"><strong>Страна
+                производства: {{ el.country_of_manufacture }}</strong></h4>
+            <h4 style="color:white"> История: {{ el.history }}</h4>
+        {% endif %}
+        <br>
+        {% if el.manufacture_name == 'Ford' %}
+            <div><a href="/ford" style="color:darkviolet">
+                <h1>{{ el.manufacture_name }}</h1></a></div>
+            <a href="/ford"> <img src="{{ el.logo_manuf.url }}" width="1850"
+                                  height="700"></a>.
+            <h4 style="color:blanchedalmond"><strong>Страна
+                производства: {{ el.country_of_manufacture }}</strong></h4>
+            <h4 style="color:white"> История: {{ el.history }}</h4>
+        {% endif %}
+        <br>
+        {% if el.manufacture_name == 'Renault' %}
+            <div><a href="/renault" style="color:darkviolet">
+                <h1>{{ el.manufacture_name }}</h1></a></div>
+            <a href="/renault"> <img src="{{ el.logo_manuf.url }}" width="1850"
+                                     height="700"></a>.
+            <h4 style="color:blanchedalmond"><strong>Страна
+                производства: {{ el.country_of_manufacture }}</strong></h4>
+            <h4 style="color:white"> История: {{ el.history }}</h4>
+        {% endif %}
+        <br>
+        {% if el.manufacture_name == 'Peugeot' %}
+            <div><a href="/peugeot" style="color:darkviolet">
+                <h1>{{ el.manufacture_name }}</h1></a></div>
+            <a href="/peugeot"> <img src="{{ el.logo_manuf.url }}" width="1850"
+                                     height="700"></a>.
+            <h4 style="color:blanchedalmond"><strong>Страна
+                производства: {{ el.country_of_manufacture }}</strong></h4>
+            <h4 style="color:white"> История: {{ el.history }}</h4>
+        {% endif %}
+        <br>
+        {% if el.manufacture_name == 'Honda' %}
+            <div><a href="/honda" style="color:darkviolet">
+                <h1>{{ el.manufacture_name }}</h1></a></div>
+            <a href="/honda"> <img src="{{ el.logo_manuf.url }}" width="1850"
+                                   height="700"></a>.
+            <h4 style="color:blanchedalmond"><strong>Страна
+                производства: {{ el.country_of_manufacture }}</strong></h4>
+            <h4 style="color:white"> История: {{ el.history }}</h4>
+        {% endif %}
+        <br>
+        {% if el.manufacture_name == 'Lada' %}
+            <div><a href="/lada" style="color:darkviolet">
+                <h1>{{ el.manufacture_name }}</h1></a></div>
+            <a href="/lada"> <img src="{{ el.logo_manuf.url }}" width="1850"
+                                  height="700"></a>.
+            <h4 style="color:blanchedalmond"><strong>Страна
+                производства: {{ el.country_of_manufacture }}</strong></h4>
+            <h4 style="color:white"> История: {{ el.history }}</h4>
+
+        {% endif %}
+        <br>
+    {% endfor %}
+
+
+
+{% endblock %}
